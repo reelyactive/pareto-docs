@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> Pareto Docs </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Template for Pareto Docs.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/pareto-docs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="js/pareto-docs.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-49659454-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body ng-app="pareto-docs">
+    <div ng-controller="InteractionCtrl">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"
+                  ng-init="navCollapsed = true"
+                  ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand-img" href="https://www.reelyactive.com">
+            <img src="images/barnowl-logo-header.png" class="img-responsive">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"
+             ng-click="navCollapsed = true">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/"> Pareto Docs </a></li>
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+              <a href class="dropdown-toggle" uib-dropdown-toggle role="button"
+                 data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                Quick links <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                <li role="menuitem">
+                  <a href="https://pareto.reelyactive.com" target="_blank">
+                    Pareto by reelyActive
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem">
+                  <a href="https://www.reelyactive.com" target="_blank">
+                    reelyActive website
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <h1 id="home">
+              Pareto Docs <br>
+              <small> Documentation of the Pareto platform by reelyActive </small> 
+            </h1>
+            <h2>
+              Browse Documentation by View <br>
+              <small> Each view can be accessed by its icon found on the left-side panel </small>
+            </h2>
+            <!-- Dashboard View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="dashboard">
+                  <img src="images/dashboard-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Dashboard: </span>
+                  Observe the real-time data processed by Pareto.
+                </p>
+                <a href="dashboard" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Embedded Apps View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="embeddedapps">
+                  <img src="images/embeddedapps-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Embedded Apps: </span>
+                  Discover web applications built directly on Pareto's real-time event data stream.
+                </p>
+                <a href="embeddedapps" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Analytics View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="analytics">
+                  <img src="images/analytics-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Analytics: </span>
+                  Observe anonymous behaviour trends over time <i>(enabled only during trial period)</i>.
+                </p>
+                <a href="analytics" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Points of Interest View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="poi">
+                  <img src="images/poi-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Points of Interest: </span>
+                  Assign metadata to deployed infrastructure and observe its status.
+                </p>
+                <a href="poi" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- People and Things View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="pat">
+                  <img src="images/pat-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> People and Things: </span>
+                  Manage identifiable devices and associate metadata with people and assets.
+                </p>
+                <a href="pat" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Integrations View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="integrations">
+                  <img src="images/integrations-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Integrations: </span>
+                  Forward the real-time data to third-party platforms and services.
+                </p>
+                <a href="integrations" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Business Rules View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="businessrules">
+                  <img src="images/businessrules-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Business Rules: </span>
+                  Prototype applications with simple business rules.
+                </p>
+                <a href="businessrules" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Digital Signage View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="digitalsignage">
+                  <img src="images/digitalsignage-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Digital Signage: </span>
+                  Prototype responsive content for digital signage.
+                </p>
+                <a href="digitalsignage" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Settings View -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="settings">
+                  <img src="images/settings-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Settings: </span>
+                  Configure global settings.
+                </p>
+                <a href="settings" class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Pareto CTA -->
+            <br><br><hr>
+            <img src="images/pareto-by-reelyactive.jpg"
+                 class="img-responsive center-block"> <br>
+            <p class="text-center">
+              <a href="https://getpareto.com" target="_blank"
+                 class="btn btn-default"> Get Pareto </a> &nbsp;
+              <a href="https://pareto.reelyactive.com" target="_blank"
+                 class="btn btn-primary"> Log In </a> &nbsp;
+              <a href="#home" class="btn btn-success"> Pareto Docs </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="pull-right">
+          <img src="images/pareto-logo-footer.png" class="img-responsive">
+        </div>
+        &nbsp;
+        <a href="https://www.reelyactive.com"
+           uib-tooltip="We believe in an open Internet of Things"
+           tooltip-placement="right">
+          &copy; reelyActive 2017
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
