@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title> Integrations | Pareto Docs </title>
+    <title> Barnacles REST Integration | Pareto Docs </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Documentation of the integrations view of the Pareto platform by reelyActive.">
+    <meta name="description" content="Documentation of the integration of the Barnacles REST API with the Pareto platform by reelyActive.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/pareto-docs.css">
+    <link rel="stylesheet" href="../../style/pareto-docs.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="../js/pareto-docs.js"></script>
+    <script type="text/javascript" src="../../js/pareto-docs.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -31,13 +31,14 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand-img" href="https://www.reelyactive.com">
-            <img src="../images/barnowl-logo-header.png" class="img-responsive">
+            <img src="../../images/barnowl-logo-header.png"
+                 class="img-responsive">
           </a>
         </div>
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"
              ng-click="navCollapsed = true">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="../"> Pareto Docs </a></li>
+            <li class="active"><a href="../../"> Pareto Docs </a></li>
             <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
               <a href class="dropdown-toggle" uib-dropdown-toggle role="button"
                  data-toggle="dropdown" aria-haspopup="true"
@@ -64,90 +65,29 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-            <img src="../images/integrations-title.png"
+            <img src="../../images/integrations-barnaclesrest-title.png"
                  class="img-responsive center-block">
             <h1>
-              Pareto Integrations <br>
-              <small> Forward the real-time data to third-party platforms and services </small> 
+              Barnacles REST Integration <br>
+              <small> Forward real-time location events to any endpoint as POSTs </small>
             </h1>
-            <h2>
-              Browse Integrations <br>
-              <small> Each integration is created and managed within the integration view </small>
-            </h2>
-            <!-- Google Analytics Integration -->
-            <div class="row well">
-              <div class="col-sm-3 col-md-4 col-lg-3">
-                <a href="googleanalytics">
-                  <img src="../images/integrations-googleanalytics-title-icon.png"
-                       class="img-responsive center-block">
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-8 col-lg-9">
-                <p>
-                  <span class="lead"> Google Analytics: </span>
-                  Measure visits to a physical space like visits to a website.
-                </p>
-                <a href="googleanalytics"
-                   class="hidden-xs btn btn-sm btn-primary">
-                  Read documentation
-                </a>
-              </div>
-            </div>
-            <!-- Barnacles REST Integration -->
-            <div class="row well">
-              <div class="col-sm-3 col-md-4 col-lg-3">
-                <a href="barnaclesrest">
-                  <img src="../images/integrations-barnaclesrest-title-icon.png"
-                       class="img-responsive center-block">
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-8 col-lg-9">
-                <p>
-                  <span class="lead"> Barnacles REST: </span>
-                  Forward real-time location events to any endpoint as POSTs.
-                </p>
-                <a href="barnaclesrest"
-                   class="hidden-xs btn btn-sm btn-primary">
-                  Read documentation
-                </a>
-              </div>
-            </div>
-            <!-- Treasure Data Integration -->
-            <div class="row well">
-              <div class="col-sm-3 col-md-4 col-lg-3">
-                <a href="treasuredata">
-                  <img src="../images/integrations-treasuredata-title-icon.png"
-                       class="img-responsive center-block">
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-8 col-lg-9">
-                <p>
-                  <span class="lead"> Treasure Data: </span>
-                  Forward real-time location event data to Treasure Data.
-                </p>
-                <a href="treasuredata"
-                   class="hidden-xs btn btn-sm btn-primary">
-                  Read documentation
-                </a>
-              </div>
-            </div>
             <!-- Pareto CTA -->
             <br><br><hr>
-            <img src="../images/pareto-by-reelyactive.jpg"
+            <img src="../../images/pareto-by-reelyactive.jpg"
                  class="img-responsive center-block"> <br>
             <p class="text-center">
               <a href="https://getpareto.com" target="_blank"
                  class="btn btn-default"> Get Pareto </a> &nbsp;
               <a href="https://pareto.reelyactive.com" target="_blank"
                  class="btn btn-primary"> Log In </a> &nbsp;
-              <a href="../" class="btn btn-success"> Pareto Docs </a>
+              <a href="../../" class="btn btn-success"> Pareto Docs </a>
             </p>
           </div>
         </div>
       </div>
       <footer class="footer">
         <div class="pull-right">
-          <img src="../images/pareto-logo-footer.png" class="img-responsive">
+          <img src="../../images/pareto-logo-footer.png" class="img-responsive">
         </div>
         &nbsp;
         <a href="https://www.reelyactive.com"
