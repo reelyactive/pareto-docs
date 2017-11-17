@@ -71,6 +71,103 @@
               Contextual API <br>
               <small> Query real-time location and associated contextual metadata via REST </small> 
             </h1>
+            <p> The Contextual API is suited for <i>occasional</i> or <i>periodic</i> contextual queries.  The Contextual API answers: <b>what is the current location and context?</b> </p>
+            <p> Pareto's Contextual API queries are identical to those of reelyActive's <a href="https://www.npmjs.com/package/chickadee" target="_blank">chickadee</a> open source software (OSS) package.  Applications built on the Contextual API will be compatible with both Pareto and the OSS. </p>
+            <p> Both JSON and HTML are supported: any route can be queried via browser for a human-readable response. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/api-contextual-contextat.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> What is the context at ___? </span>
+                <p> The <tt>/contextat</tt> route provides real-time location data augmented with any associated contextual metadata.  The query is performed on a logical grouping of <b>receivers</b> based on either: </p>
+                <ul>
+                  <li> a receiver identifier, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/contextat/receiver/001bc50940810000 </code>
+                  <li> a directory, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/contextat/directory/notman:first:east </code>
+                  <li> a tag, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/contextat/tags/office </code>
+                </ul>
+                <p> Consult the <b>chickadee</b> documentation for details concerning: </p>
+                <p class="text-center">
+                  <a href="https://www.npmjs.com/package/chickadee#get-contextatreceiverdevice-id" target="_blank"
+                     class="btn btn-sm btn-default"> receiver </a> &nbsp;
+                  <a href="https://www.npmjs.com/package/chickadee#get-contextatdirectorydirectory" target="_blank"
+                     class="btn btn-sm btn-default"> directory </a> &nbsp;
+                  <a href="https://www.npmjs.com/package/chickadee#get-contextattagstags" target="_blank"
+                     class="btn btn-sm btn-default"> tags </a>
+                </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/api-contextual-contextnear.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> What is the context near ___? </span>
+                <p> The <tt>/contextnear</tt> route provides real-time location data augmented with any associated contextual metadata.  The query is performed on a logical grouping of <b>transmitters</b> based on either: </p>
+                <ul>
+                  <li> a transmitter identifier, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/contextnear/transmitter/fee150bada55 </code>
+                  <li> a tag, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/contextnear/tags/chair </code>
+                </ul>
+                <p> Consult the <b>chickadee</b> documentation for details concerning: </p>
+                <p class="text-center">
+                  <a href="https://www.npmjs.com/package/chickadee#get-contextneartransmitterdevice-id" target="_blank"
+                     class="btn btn-sm btn-default"> transmitter </a> &nbsp;
+                  <a href="https://www.npmjs.com/package/chickadee#get-contextneartagstags" target="_blank"
+                     class="btn btn-sm btn-default"> tags </a>
+                </p>
+              </div>
+            </div>
+            <h2>
+              Additional API Documentation <br>
+              <small> WebSocket for real-time, or take another REST for periodic queries </small>
+            </h2>
+            <!-- WebSocket API -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../websocket">
+                  <img src="../../images/api-websocket-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Websocket: </span>
+                  Consume Pareto's real-time stream of contextual events either server-side or client-side.
+                </p>
+                <a href="../websocket"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- RTLS REST API -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../rtls">
+                  <img src="../../images/api-rtls-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> RTLS: </span>
+                  Query real-time location and sensor data via REST.
+                </p>
+                <a href="../rtls"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../../images/pareto-by-reelyactive.jpg"
