@@ -71,6 +71,111 @@
               RTLS API <br>
               <small> Query real-time location and sensor data via REST </small> 
             </h1>
+            <p> The RTLS API is suited for <i>occasional</i> or <i>periodic</i> location and/or sensor queries based strictly on device identifiers.  The RTLS API answers: <b>what is the current location and packet payload?</b> </p>
+            <p> Pareto's RTLS API queries are identical to those of reelyActive's <a href="https://www.npmjs.com/package/barterer" target="_blank">barterer</a> open source software (OSS) package.  Applications built on the RTLS API will be compatible with both Pareto and the OSS.  Packet payloads are decoded using reelyActive's <a href="https://www.npmjs.com/package/advlib" target="_blank">advlib</a> OSS package. </p>
+            <p> Both JSON and HTML are supported: any route can be queried via browser for a human-readable response. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/api-rtls-whereis.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> Where is ___? </span>
+                <p> The <tt>/whereis</tt> route provides real-time location data and the most recent packet payload.  The query is performed on a specific <b>transmitter</b> based on: </p>
+                <ul>
+                  <li> a transmitter identifier, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/whereis/transmitter/fee150bada55 </code>
+                </ul>
+                <p> Consult the <b>barterer</b> documentation for details concerning: </p>
+                <p class="text-center">
+                  <a href="https://www.npmjs.com/package/barterer#restful-interactions" target="_blank"
+                     class="btn btn-sm btn-default"> transmitter </a> &nbsp;
+                </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/api-rtls-whatat.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> What is at ___? </span>
+                <p> The <tt>/whatat</tt> route provides real-time location data and the most recent packet payloads.  The query is performed on a specific <b>receiver</b> based on: </p>
+                <ul>
+                  <li> a receiver identifier, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/whatat/receiver/001bc50940810000 </code>
+                </ul>
+                <p> Consult the <b>barterer</b> documentation for details concerning: </p>
+                <p class="text-center">
+                  <a href="https://www.npmjs.com/package/barterer#restful-interactions" target="_blank"
+                     class="btn btn-sm btn-default"> receiver </a> &nbsp;
+                </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/api-rtls-whatnear.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> What is near ___? </span>
+                <p> The <tt>/whatnear</tt> route provides real-time location data and the most recent packet payloads.  The query is performed on a specific <b>transmitter</b> based on: </p>
+                <ul>
+                  <li> a transmitter identifier, <i>for example:</i> <br>
+                       <code> pareto.reelyactive.com/whatnear/transmitter/fee150bada55 </code>
+                </ul>
+                <p> Consult the <b>barterer</b> documentation for details concerning: </p>
+                <p class="text-center">
+                  <a href="https://www.npmjs.com/package/barterer#restful-interactions" target="_blank"
+                     class="btn btn-sm btn-default"> transmitter </a> &nbsp;
+                </p>
+              </div>
+            </div>
+            <h2>
+              Additional API Documentation <br>
+              <small> WebSocket for real-time, or take another REST for periodic queries </small>
+            </h2>
+            <!-- WebSocket API -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../websocket">
+                  <img src="../../images/api-websocket-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Websocket: </span>
+                  Consume Pareto's real-time stream of contextual events either server-side or client-side.
+                </p>
+                <a href="../websocket"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Contextual REST API -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../contextual">
+                  <img src="../../images/api-contextual-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Contextual: </span>
+                  Query real-time location and associated contextual metadata via REST.
+                </p>
+                <a href="../contextual"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../../images/pareto-by-reelyactive.jpg"
