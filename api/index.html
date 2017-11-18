@@ -70,6 +70,44 @@
               Pareto APIs <br>
               <small> Consume data from Pareto via REST API or WebSocket </small> 
             </h1>
+            <p> Pareto features two types of APIs which address the typical application data needs of either <b><i>push or pull?</i></b> </p>
+            <div class="row">
+              <div class="col-md-4 col-md-push-8">
+                <img src="../images/api-push.png"
+                     class="img-responsive img-rounded center-block">
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+                <span class="lead"> WebSocket PUSH </span>
+                <p> The WebSocket API pushes every event from Pareto to the client in real-time.  This is suited to applications which: </p>
+                <ul>
+                  <li> respond or take action in real-time
+                  <li> are highly sensitive to latency
+                  <li> require a complete view of current system state
+                </ul>
+                <p class="text-center">
+                  <a href="websocket"
+                     class="btn btn-sm btn-primary"> Read Documentation </a>
+                </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-md-4 col-md-push-8">
+                <img src="../images/api-pull.png"
+                     class="img-responsive img-rounded center-block">
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+                <span class="lead"> RESTful PULL </span>
+                <p> The REST API allows the client to query the current state on demand.  This is suited to applications which: </p>
+                <ul>
+                  <li> respond or take action periodically or in near-real-time
+                  <li> are user-driven
+                  <li> require only a specific view of current system state
+                </ul>
+                <p> Follow the links below for documentation specific to the <i>RTLS</i> and <i>Contextual</i> APIs. </p>
+              </div>
+            </div>
+            <br>
             <h2>
               Browse APIs <br>
               <small> WebSocket for real-time events and REST for periodic queries </small>
