@@ -71,6 +71,130 @@
               WebSocket API <br>
               <small> Consume Pareto's real-time stream of contextual events either server-side or client-side </small> 
             </h1>
+            <p> The WebSocket API is suitable for applications that are latency-sensitive and/or require a complete view of current system state.  The WebSocket API provides a <b><i>real-time event stream.</i></b> </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/api-push.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> Events </span>
+                <p> The WebSocket API emits a single event, called <tt>event</tt>. An <b>event</b> is the consequence of an interaction between a radio-identifiable device and receiver infrastructure. </p>
+                <p> Consult the <i>Event Data Overview</i> tutorial on diyActive for full documentation of the <b>event</b> data structure: </p>
+                <p class="text-center">
+                  <a href="https://reelyactive.github.io/event-data-overview.html"
+                     class="btn btn-sm btn-primary"
+                     target="_blank"> Read tutorial on diyActive </a>
+                </p>
+                <br>
+                <p> Connect a client to the Pareto WebSocket API at the following URL: </p>
+                <p> <code> https://pareto.reelyactive.com </code> </p>
+                <p> An <i>API token</i> must be provided for identification and authentication.  This can be obtained from the Accounts page. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/mascot-barnacles-bubble.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> Server-Side Operation </span>
+                <p> The WebSocket API can be consumed by software running <b>on a local or cloud server</b>.  This configuration is suited for applications that: </p>
+                <ul>
+                  <li> write <b>event</b>s to a database
+                  <li> apply business rules to the <b>event</b> stream
+                  <li> transform the <b>event</b> data before serving it to web applications
+                </ul>
+                <p> Consult the <i>Connect a WebSocket Client to Pareto</i> tutorial on diyActive to learn more: </p>
+                <p class="text-center">
+                  <a href="https://reelyactive.github.io/pareto-socket-client.html"
+                     class="btn btn-sm btn-primary"
+                     target="_blank"> Read tutorial on diyActive </a>
+                </p>
+                <br>
+                <p> Examples of server-side applications which consume the WebSocket API include: </p>
+                <p class="text-center">
+                  <a href="https://www.npmjs.com/package/rtlips-server"
+                     class="btn btn-sm btn-default"
+                     target="_blank"> rtlips-server </a> &nbsp;
+                  <a href="https://www.npmjs.com/package/hlc-server"
+                     class="btn btn-sm btn-default"
+                     target="_blank"> hlc-server </a>
+                </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../images/mascot-beaver-bubble.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> Client-Side Operation </span>
+                <p> The WebSocket API can be consumed by JavaScript running <b>in a web browser</b>, enabling powerful web applications <i>without the need for an intermediary server!</i>  To facilitate this mode of operation, reelyActive provides <b>beaver.js</b> as open source software. </p>
+                <p> Consult the <i>Build Web Apps with beaver.js</i> tutorial on diyActive to learn more: </p>
+                <p class="text-center">
+                  <a href="https://reelyactive.github.io/build-web-apps-with-beaver.html"
+                     class="btn btn-sm btn-primary"
+                     target="_blank"> Read tutorial on diyActive </a> &nbsp;
+                </p>
+                <br>
+                <p> In addition to Pareto's own <a href="../../embeddedapps/">Embedded Apps</a>, the following web applications are among those built on beaver.js and the WebSocket API: </p>
+                <p class="text-center">
+                  <a href="https://reelyactive.github.io/beaver/"
+                     class="btn btn-sm btn-default"
+                     target="_blank"> beaver (Demo) </a> &nbsp;
+                  <a href="https://reelyactive.github.io/dashboard-template-angular/"
+                     class="btn btn-sm btn-default"
+                     target="_blank"> dashboard-template-angular </a>
+                </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <h2>
+              Additional API Documentation <br>
+              <small> The RESTful alternatives </small>
+            </h2>
+            <!-- RTLS REST API -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../rtls">
+                  <img src="../../images/api-rtls-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> RTLS: </span>
+                  Query real-time location and sensor data via REST.
+                </p>
+                <a href="../rtls"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Contextual REST API -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../contextual">
+                  <img src="../../images/api-contextual-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Contextual: </span>
+                  Query real-time location and associated contextual metadata via REST.
+                </p>
+                <a href="../contextual"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../../images/pareto-by-reelyactive.jpg"
