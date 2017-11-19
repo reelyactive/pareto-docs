@@ -70,6 +70,37 @@
               The Pareto Points of Interest View <br>
               <small> Assign metadata to deployed infrastructure and observe its status </small> 
             </h1>
+            <p> The Points of Interest view lists all the infrastructure assigned to the Pareto account.  The Points of Interest view allows the assignment of metadata: <b><i>what does each place represent?</i></b> </p>
+            <span class="lead"> POI Overview </span>
+            <p> Each infrastructure device, or POI, has an overview.  The overview presents: </p>
+            <ul>
+              <li> associated metadata
+              <li> current status
+            </ul>
+            <img src="../images/poi-poi.png"
+                 class="img-responsive center-block">
+            <br>
+            <p> There are three possible actions for each POI, as follows: </p>
+            <ul>
+              <li> query <b>What at?</b> which is a shortcut to the <a href="../api/rtls">RTLS API</a>: <br>
+                   <code> /whatat/receiver/{receiver-id} </code>
+              <li> create a <b>New Story</b>
+              <li> <b>Edit</b> the associated metadata, as described below
+            </ul>
+            <br><hr><br>
+            <span class="lead"> POI Edit </span>
+            <p> The metadata associated with any POI can be edited by clicking on its <b>Edit</b> button. </p>
+            <img src="../images/poi-poi-edit.png"
+                 class="img-responsive center-block">
+            <br>
+            <p> There are four properties which may be edited: </p>
+            <ul>
+              <li> the associated <b>Directory</b>
+              <li> the associated array of <b>Tags</b>
+              <li> the <b>Position</b> of the device (if fixed)
+              <li> the associated <b>URL</b> (story)
+            </ul>
+            <p> Edits are saved by clicking <b>Save</b> or cancelled by clicking <b>Cancel</b>. </p>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../images/pareto-by-reelyactive.jpg"
