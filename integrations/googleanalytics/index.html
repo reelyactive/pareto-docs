@@ -71,6 +71,125 @@
               Google Analytics Integration <br>
               <small> Measure visits to a physical space like visits to a website </small> 
             </h1>
+            <p> The Google Analytics integration sends real-time location events to a user-defined GA account.  The Google Analytics integration models <i>"how are people browsing my webpage"</i> as <b><i>"how are people browsing my physical space?"</i></b>
+            <p> Each directory, itself a logical grouping of points of interest, is the equivalent of a <i>webpage</i>.  And each real-time location event is the equivalent of a <i>"click"</i>. </p>
+            <img src="../../images/integrations-googleanalytics-philosophy.jpg"
+                 class="img-responsive center-block">
+            <h2>
+              Prepare Google Analytics <br>
+              <small> Create an account/property and obtain a Tracking ID </small> 
+            </h2>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Tracking ID </span>
+                <p> A Google Analytics <b>Tracking ID</b> (ex: <tt>UA-00000000-0</tt>) is required in order to complete the integration.  Users unfamiliar with GA can watch our tutorial video for detailed steps to obtain their Tracking ID. </p>
+                <p class="text-center">
+                  <a ng-click="showTutorialVideo = true"
+                     class="btn btn-sm btn-default"> Watch Tutorial Video </a>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <img src="../../images/integrations-googleanalytics-trackingid.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <div ng-if="showTutorialVideo">
+              <br>
+              <div class="embed-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/__I6hF8A2sI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <br>
+            </div>
+            <h2>
+              Pareto Integration with GA <br>
+              <small> As easy as entering the Tracking ID </small> 
+            </h2>
+            <p> From the <a href="../">Integrations View</a>, click the <b>New Integration</b> button to create a new integration.  Google Analytics integration is completed with the following two steps: </p>
+            <p class="lead"> Step 1: Select Google Analytics </p>
+            <img src="../../images/integrations-googleanalytics-wizard-1.png"
+                 class="img-responsive center-block">
+            <br>
+            <p class="lead"> Step 2: Enter the Tracking ID </p>
+            <img src="../../images/integrations-googleanalytics-wizard-2.png"
+                 class="img-responsive center-block">
+            <br>
+            <p> Upon clicking <b>Save</b> the integration is complete and Pareto will begin forwarding events to Google Analytics.  Within a few moments, it is possible to observe visitors, if present, from the <b>Real-Time Report</b> feature of Google Analytics. </p>
+            <img src="../../images/integrations-googleanalytics-realtime.png"
+                 class="img-responsive center-block">
+            <br>
+            <h2>
+              Add Custom Dimensions in GA <br>
+              <small> Benefit from additional occupant metadata </small> 
+            </h2>
+            <p> Pareto adds seven custom dimensions to each event it forwards to Google Analytics.  These dimensions include additional information and inferences about the detected devices. </p>
+            <span class="lead"> Browse to Custom Dimensions Interface </span>
+            <p> To access these custom dimensions, it is necessary to manually assign each in the Google Analytics Admin console.  The Custom Definitions interface can be reached within GA as follows: </p>
+            <ul>
+              <li> browse to the <b>Admin</b> console
+              <li> select the corresponding <b>Account</b> and <b>Property</b>
+              <li> click on <b>Custom Definitions</b> under the Property
+              <li> click on <b>Custom Dimensions</b> under Custom Definitions
+            </ul>
+            <img src="../../images/integrations-googleanalytics-customdimensions.png"
+                 class="img-responsive center-block">
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Enter Custom Dimensions </span>
+                <p> The seven custom dimensions must be entered <b>in order</b> of <i>Index</i>. </p>
+                <p> Each custom dimension is entered by clicking the <b>New Custom Dimension</b> button and entering the <i>Name</i> and selecting the <i>Scope</i>, observing the order of the following table. </p>
+                <p> Once complete, the Custom Dimensions should resemble the screenshot below. </p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <th> Index </th>
+                    <th> Name </th>
+                    <th> Scope </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> 1 </td>
+                      <td> Tenant ID </td>
+                      <td> Product </td>
+                    </tr>
+                    <tr>
+                      <td> 2 </td>
+                      <td> Person Session? </td>
+                      <td> Session </td>
+                    </tr>
+                    <tr>
+                      <td> 3 </td>
+                      <td> Main Directory </td>
+                      <td> Hit </td>
+                    </tr>
+                    <tr>
+                      <td> 4 </td>
+                      <td> Story URL </td>
+                      <td> Session </td>
+                    </tr>
+                    <tr>
+                      <td> 5 </td>
+                      <td> Person Probability </td>
+                      <td> Session </td>
+                    </tr>
+                    <tr>
+                      <td> 6 </td>
+                      <td> Device Segmentation </td>
+                      <td> Session </td>
+                    </tr>
+                    <tr>
+                      <td> 7 </td>
+                      <td> Cookie </td>
+                      <td> Session </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <img src="../../images/integrations-googleanalytics-customdimensions-entered.png"
+                 class="img-responsive center-block"> <br>
+            <p> The Custom Dimensions will typically be available in GA Reports <b>within a day</b>.  <i>It is normal for them not to be immediately available!</i> </p>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../../images/pareto-by-reelyactive.jpg"
