@@ -70,6 +70,37 @@
               The Pareto People and Things View <br>
               <small> Manage identifiable devices and associate metadata with people and assets </small> 
             </h1>
+            <p> The People and Things view lists all the devices whose identifiers are explicity recognised by Pareto.  The People and Things view allows the assignment of metadata: <b><i>who/what does each device represent?</i></b> </p>
+            <span class="lead"> Device Overview </span>
+            <p> Each device, has an overview.  The overview presents: </p>
+            <ul>
+              <li> associated metadata
+              <li> current visibility
+            </ul>
+            <img src="../images/pat-pat.png"
+                 class="img-responsive center-block">
+            <br>
+            <p> There are four possible actions for each device, as follows: </p>
+            <ul>
+              <li> query <b>Where is?</b> which is a shortcut to the <a href="../api/rtls">RTLS API</a>: <br>
+                   <code> /whereis/transmitter/{transmitter-id} </code>
+              <li> create a <b>New Story</b>
+              <li> <b>Edit</b> the associated metadata, as described below
+              <li> <b>Delete</b> the device
+            </ul>
+            <br><hr><br>
+            <span class="lead"> Device Edit </span>
+            <p> The metadata associated with any device can be edited by clicking on its <b>Edit</b> button. </p>
+            <img src="../images/pat-pat-edit.png"
+                 class="img-responsive center-block">
+            <br>
+            <p> There are three properties which may be edited: </p>
+            <ul>
+              <li> the associated array of <b>Tags</b>
+              <li> the <b>Position</b> of the device (if fixed)
+              <li> the associated <b>URL</b> (story)
+            </ul>
+            <p> Edits are saved by clicking <b>Save</b> or cancelled by clicking <b>Cancel</b>. </p>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../images/pareto-by-reelyactive.jpg"
