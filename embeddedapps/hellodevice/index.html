@@ -72,6 +72,87 @@
               <small> A Pareto Embedded App </small> 
             </h1>
             <p> The <i>Hello Device!</i> embedded app facilitates the observation of a specific device, its associated metadata and its packet payload.  <i>Hello Device!</i> answers the question: <b><i>how does Pareto recognise this device?</i></b> </p>
+            <br>
+            <div class="row well">
+              <div class="col-sm-12 col-md-3">
+                <span class="lead"> INSTRUCTIONS: </span>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <ol>
+                  <li> place the device of interest adjacent to a sensor
+                  <li> if there are multiple sensors, select the directory of the adjacent sensor as filter
+                  <li> observe device's decoding events on screen, if any
+                </ol>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Controls </span>
+                <p> The <b>controls</b> permit filtering device detection by <i>directory</i> and <i>RSSI</i>.  Detection can be <i>Paused</i> on the most recent <i>event</i>. </p>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <img src="../../images/embeddedapps-hellodevice-controls.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Visualisation </span>
+                <p> The <b>Visualisation</b> is a rendering of the image associated with the <b>Story</b>, if any. </p>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <img src="../../images/embeddedapps-hellodevice-visualisation.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Event Properties </span>
+                <p> The <b>Event Properties</b> related to the device itself are listed in a table. </p>
+                <p> Consult the <i>Event Data Overview</i> tutorial on diyActive for full documentation of the <b>event</b> data structure: </p>
+                <p class="text-center">
+                  <a href="https://reelyactive.github.io/event-data-overview.html"
+                     class="btn btn-sm btn-primary" 
+                     target="_blank"> Read tutorial on diyActive </a>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <img src="../../images/embeddedapps-hellodevice-event.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Story (JSON-LD) </span>
+                <p> The <b>Story</b> associated with the device, as fetched as <b>JSON-LD</b> from the <i>deviceUrl</i>, is listed. </p>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <img src="../../images/embeddedapps-hellodevice-story.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Tiraid </span>
+                <p> The <b>tiraid</b> of the most recent decoded packet is represented as JSON.  This includes the payload which may be interpreted. </p>
+                <p> The <i>identifier</i> property is the result of decoding by the <i>advlib</i> open source software library. </p>
+                <p class="text-center">
+                  <a href="https://github.com/reelyactive/advlib/"
+                     class="btn btn-sm btn-default" 
+                     target="_blank"> advlib </a>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <img src="../../images/embeddedapps-hellodevice-tiraid.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><hr><br>
             <h2>
               Pareto Embedded Apps <br>
               <small> Many more to explore </small>
