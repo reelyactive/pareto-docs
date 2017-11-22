@@ -68,6 +68,14 @@
               Associations <br>
               <small> Metadata associated with devices in Pareto </small> 
             </h1>
+            <p> Each radio-identifiable device may be associated with any or all of the following properties: </p>
+            <ul>
+              <li> a <b>Directory</b> to facilitate hierarchical organisation
+              <li> <b>Tags</b> to facilitate classification
+              <li> a <b>Position</b> to facilitate location/positioning
+              <li> a <b>URL</b> to link with the semantic web
+            </ul>
+            <p> Detailed information on each property is presented below. </p>
             <p class="text-center">
               <a href="#directory"
                  class="btn btn-sm btn-default"> Directory </a> &nbsp;
@@ -78,22 +86,123 @@
               <a href="#url"
                  class="btn btn-sm btn-default"> URL </a>
             </p>
+            <!-- Directory -->
             <h2 id="directory">
               Directory <br>
               <small> A hierarchical structure which specifies the semantic location of a place </small> 
             </h2>
+            <p> Each receiver <i>should</i> be associated with a <b>directory</b>.  The directory concept is similar to that used in computing: a hierarchy of sub-directories branches out in a tree-like structure. </p>
+            <p> The first level of hierarchy is called the <b>root</b>.  Each level in the directory hierarchy is separated by a colon (<b>:</b>).  For instance, consider organising a <i>building</i> (root) as a hierarchy of <i>floors</i> and <i>areas</i>: </p>
+            <img src="../images/associations-directory-hierarchy.png"
+                 class="img-responsive center-block"> <br>
+            <p> Such a hierarchy facilitates elegant application-level filtering such as: </p>
+            <ul>
+              <li> the entire building
+              <li> the n<sup>th</sup> floor of the building
+              <li> only the n<sup>th</sup> floor conference room
+            </ul>
+            <p> The association of directories with receivers is <b>managed in the <i>Points of Interest View</i>.</b>  The <i>Dashboard View</i> is organised around the root directory, and several <i>Embedded Apps</i> permit filtering by directory.  The <i>Contextual API</i> accepts queries by directory. </p>
+            <p class="text-center">
+              <a href="../poi"
+                 class="btn btn-sm btn-primary"> POI View </a> &nbsp;
+              <a href="../dashboard"
+                 class="btn btn-sm btn-default"> Dashboard View </a> &nbsp;
+              <a href="../embeddedapps"
+                 class="btn btn-sm btn-default"> Embedded Apps </a> &nbsp;
+              <a href="../api/contextual"
+                 class="btn btn-sm btn-default"> Contextual API </a>
+            </p>
+            <!-- Tags -->
             <h2 id="tags">
               Tags <br>
               <small> A set of strings which classify the device </small> 
             </h2>
+            <p> Each device <i>may</i> be associated with one or more <b>tags</b>.  The tag concept is similar to that of a label on a product: a set of classifiers. </p>
+            <p> Each <i>tag</i> is a string, and the set of tags is contained in an array.  The following is an example of tags which might be associated with a fixed infrastructure device in a <i>conference room:</i> </p>
+            <p class="text-center"> <tt> [ 'conference room', 'capacity=10', 'hasProjector' ] </tt> </p>
+            <br>
+            <p> and the following is an example of tags which might be associated with a device representing an <i>office chair:</i> </p>
+            <p class="text-center"> <tt> [ 'chair', 'colour=blue', 'hasWheels' ] </tt> </p>
+            <br>
+            <p> Such classification using <i>tags</i> facilitates elegant application-level filtering such as: </p>
+            <ul>
+              <li> conference rooms (throughout the building)
+              <li> chairs (throughout the building)
+              <li> conference rooms with a projector that can fit 7 occupants and have only blue wheeled chairs
+            </ul>
+            <p> The association of tags with devices is <b>managed in the <i>Points of Interest View</i> </b> and the <b> <i>People and Things View</i>.</b>  Several <i>Embedded Apps</i> use tags.  The <i>Contextual API</i> accepts queries by tags. </p>
+            <p class="text-center">
+              <a href="../poi"
+                 class="btn btn-sm btn-primary"> POI View </a> &nbsp;
+              <a href="../pat"
+                 class="btn btn-sm btn-primary"> PAT View </a> &nbsp;
+              <a href="../embeddedapps"
+                 class="btn btn-sm btn-default"> Embedded Apps </a> &nbsp;
+              <a href="../api/contextual"
+                 class="btn btn-sm btn-default"> Contextual API </a>
+            </p>
+            <!-- Position -->
             <h2 id="position">
               Position <br>
               <small> A set of coordinates representing a specific location </small> 
             </h2>
+            <p> Each device <i>may</i> be associated with a <b>position</b>.  A position is either absolute geocoordinates or an offset from an arbitrary origin, and can be represented in two or three dimensions. </p>
+            <p> Each <i>position</i> is a GeoJSON coordinates array.  The following is an example of the position of reelyActive's first office at <i>Notman House</i>, interpreted as 73.57008&deg; West, 45.51193&deg; North: </p>
+            <p class="text-center"> <tt> [ -73.57008, 45.51193 ] </tt> </p>
+            <br>
+            <p> The <i>altitude</i> could be included as a third parameter (ex: in meters), or alternatively, could be included as a floor number.  For example, to specify that the office is on the 1<sup>st</sup> floor: </p>
+            <p class="text-center"> <tt> [ -73.57008, 45.51193, 1 ] </tt> </p>
+            <br>
+            <p> The <i>Embedded Apps</i> observe the convention above, however <b>any valid convention may be used</b> to suit the target application(s). </p>
+            <p> The <i>WebSocket API</i> will include both a <i>position</i> and <i>positioningMethod</i> value if one of the following two conditions is met, in order of precedence: </p>
+            <table class="table">
+              <thead>
+                <th> Condition </th>
+                <th> <tt>position</tt> </th>
+                <th> <tt>positioningMethod</tt> </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> Decoded device has associated position </td>
+                  <td> Position associated with decoded device </td>
+                  <td> <tt>fixedReference</tt> </td>
+                </tr>
+                <tr>
+                  <td> Strongest receiver has associated position </td>
+                  <td> Position associated with strongest receiver </td>
+                  <td> <tt>strongestReceiver</tt> </td>
+                </tr>
+              </tbody>
+            </table>
+            <p> The association of positions with devices is <b>managed in the <i>Points of Interest View</i> </b> and the <b> <i>People and Things View</i>.</b> </p>
+            <p class="text-center">
+              <a href="../poi"
+                 class="btn btn-sm btn-primary"> POI View </a> &nbsp;
+              <a href="../pat"
+                 class="btn btn-sm btn-primary"> PAT View </a> &nbsp;
+              <a href="../embeddedapps"
+                 class="btn btn-sm btn-default"> Embedded Apps </a> &nbsp;
+              <a href="../api/websocket"
+                 class="btn btn-sm btn-default"> WebSocket API </a>
+            </p>
+            <!-- URL -->
             <h2 id="url">
               URL <br>
               <small> A link to information in the form of JSON-LD and Schema.org </small> 
             </h2>
+            <p> Each device <i>may</i> be associated with a <b>URL</b>, better known as a web address.  The URL references human and/or machine-readable information associated with the device. </p>
+            <p> Pareto and its <i>Embedded Apps</i> recognise such machine-readable information in the form of <b>JSON-LD</b> and <b>Schema.org</b>.  For instance, the image and caption associated with each "bubble" in Pareto, as illustrated below, is based on such information, retrieved from a URL. </p>
+            <img src="../images/associations-url-bubbles.png"
+                 class="img-responsive center-block"> <br>
+            <p> The association of URLs with devices is <b>managed in the <i>Points of Interest View</i> </b> and the <b> <i>People and Things View</i>.</b> </p>
+            <p class="text-center">
+              <a href="../poi"
+                 class="btn btn-sm btn-primary"> POI View </a> &nbsp;
+              <a href="../pat"
+                 class="btn btn-sm btn-primary"> PAT View </a> &nbsp;
+              <a href="../embeddedapps"
+                 class="btn btn-sm btn-default"> Embedded Apps </a>
+            </p>
             <!-- Pareto CTA -->
             <br><br><hr>
             <img src="../images/pareto-by-reelyactive.jpg"
