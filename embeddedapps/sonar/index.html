@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title> Embedded Apps | Pareto Docs </title>
+    <title> Sonar | Pareto Docs </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Documentation of the embedded apps of the Pareto platform by reelyActive.">
+    <meta name="description" content="Documentation of the Sonar embedded app of the Pareto platform by reelyActive.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/pareto-docs.css">
+    <link rel="stylesheet" href="../../style/pareto-docs.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="../js/pareto-docs.js"></script>
+    <script type="text/javascript" src="../../js/pareto-docs.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -31,13 +31,14 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand-img" href="https://www.reelyactive.com">
-            <img src="../images/barnowl-logo-header.png" class="img-responsive">
+            <img src="../../images/barnowl-logo-header.png"
+                 class="img-responsive">
           </a>
         </div>
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"
              ng-click="navCollapsed = true">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="../"> Pareto Docs </a></li>
+            <li class="active"><a href="../../"> Pareto Docs </a></li>
             <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
               <a href class="dropdown-toggle" uib-dropdown-toggle role="button"
                  data-toggle="dropdown" aria-haspopup="true"
@@ -64,106 +65,110 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-            <img src="../images/embeddedapps-title.png"
+            <img src="../../images/embeddedapps-sonar-title.jpg"
                  class="img-responsive center-block">
             <h1>
-              Pareto Embedded Apps <br>
-              <small> Discover web applications built directly on Pareto's real-time event data stream </small> 
+              Sonar <br>
+              <small> A Pareto Embedded App </small> 
             </h1>
-            <p> The Embedded Apps view is an exhaustive list of web applications accessible within Pareto.  Embedded apps inspire answers to the question: <b><i>what can be done with the real-time data?</i></b> </p>
-            <!-- Built on WebSocket API -->
-            <div class="row">
-              <div class="col-sm-12 col-md-4">
-                <img src="../images/api-websocket-title-icon.png"
-                     class="img-responsive center-block">
+            <p> The <i>Sonar</i> embedded app provides an ambient visualisation of occupancy by zone.  <i>Sonar</i> conveys to an observer in an instant: <b><i>what areas are the most/least occupied right now?</i></b> </p>
+            <br>
+            <div class="row well">
+              <div class="col-sm-12 col-md-3">
+                <span class="lead"> PREREQUISITES: </span>
               </div>
-              <div class="col-sm-12 col-md-8">
-                <span class="lead"> Built on the WebSocket API </span>
-                <p> The embedded apps are built on the <i>WebSocket API</i>, typically using <b>beaver.js</b>.  Consult the API documentation for details: </p>
-                <p class="text-center">
-                  <a href="../api/websocket" target="_blank"
-                     class="btn btn-sm btn-primary"> Read documentation </a> &nbsp;
-                  <a href="https://reelyactive.github.io/build-web-apps-with-beaver.html" target="_blank"
-                     class="btn btn-sm btn-default"> beaver.js </a>
-                </p>
+              <div class="col-sm-12 col-md-9">
+                <ol>
+                  <li> each sensor should be associated with a <i>Directory</i>
+                  <li> each sensor should be associated with a <i>Story URL</i> which includes a <i>name</i> and <i>image</i>
+                  <li> each sensor may be associated with a <i>Tag</i> indicating occupancy capacity
+                </ol>
               </div>
             </div>
             <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> POI Associations </span>
+                <p> The associations for each sensor can be edited in the <i>POI View:</i> </p>
+                <p class="text-center">
+                  <a href="../../poi/#edit" target="_blank"
+                     class="btn btn-sm btn-primary"> Read documentation </a>
+                </p>
+                <p> The table provides an example of each association and a link to further documentation. </p>
+                <p> The <i>Sonar</i> embedded app will observe the <b>capacity=N</b> tag, where <i>N</i> is an integer representing the maximum number of person-occupants.  In the absence of this tag, the maximum occupancy will be inferred. </p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <table class="table table-bordered table-striped">
+                  <tbody>
+                    <tr>
+                      <td> Directory </td>
+                      <th> building:floor:area </th>
+                      <td>
+                        <a href="../../associations/#directory"
+                           class="btn btn-xs btn-default"> Read documentation </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Tags </td>
+                      <th> capacity=10 </th>
+                      <td>
+                        <a href=../../associations/#tags""
+                           class="btn btn-xs btn-default"> Read documentation </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Story URL </td>
+                      <th> https://reelyactive.com/context/ </th>
+                      <td>
+                        <a href="../../associations/#url"
+                           class="btn btn-xs btn-default"> Read documentation </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <br><hr><br>
             <h2>
-              Browse Documentation by Embedded App <br>
-              <small> Listed in alphabetical order </small>
+              Pareto Embedded Apps <br>
+              <small> Many more to explore </small>
             </h2>
-            <!-- Hello Device -->
+            <!-- Embedded Apps Home -->
             <div class="row well">
               <div class="col-sm-3 col-md-4 col-lg-3">
-                <a href="hellodevice">
-                  <img src="../images/embeddedapps-hellodevice-title-icon.png"
+                <a href="../">
+                  <img src="../../images/embeddedapps-title-icon.png"
                        class="img-responsive center-block">
                 </a>
               </div>
               <div class="col-sm-9 col-md-8 col-lg-9">
                 <p>
-                  <span class="lead"> Hello Device: </span>
-                  Observe a specific device, its associated metadata and its packet payload.
+                  <span class="lead"> Embedded Apps: </span>
+                  Discover web applications built directly on Pareto's real-time event data stream.
                 </p>
-                <a href="hellodevice" class="hidden-xs btn btn-sm btn-primary">
-                  Read documentation
-                </a>
-              </div>
-            </div>
-            <!-- Hello Events -->
-            <div class="row well">
-              <div class="col-sm-3 col-md-4 col-lg-3">
-                <a href="helloevents">
-                  <img src="../images/embeddedapps-helloevents-title-icon.png"
-                       class="img-responsive center-block">
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-8 col-lg-9">
-                <p>
-                  <span class="lead"> Hello Events: </span>
-                  Observe the real-time location events streaming out of Pareto.
-                </p>
-                <a href="helloevents" class="hidden-xs btn btn-sm btn-primary">
-                  Read documentation
-                </a>
-              </div>
-            </div>
-            <!-- Sonar -->
-            <div class="row well">
-              <div class="col-sm-3 col-md-4 col-lg-3">
-                <a href="sonar">
-                  <img src="../images/embeddedapps-sonar-title-icon.jpg"
-                       class="img-responsive center-block">
-                </a>
-              </div>
-              <div class="col-sm-9 col-md-8 col-lg-9">
-                <p>
-                  <span class="lead"> Sonar: </span>
-                  Ambient visualisation of real-time occupancy by zone.
-                </p>
-                <a href="sonar" class="hidden-xs btn btn-sm btn-primary">
+                <a href="../"
+                   class="hidden-xs btn btn-sm btn-primary">
                   Read documentation
                 </a>
               </div>
             </div>
             <!-- Pareto CTA -->
             <br><br><hr>
-            <img src="../images/pareto-by-reelyactive.jpg"
+            <img src="../../images/pareto-by-reelyactive.jpg"
                  class="img-responsive center-block"> <br>
             <p class="text-center">
               <a href="https://getpareto.com" target="_blank"
                  class="btn btn-default"> Get Pareto </a> &nbsp;
               <a href="https://pareto.reelyactive.com" target="_blank"
                  class="btn btn-primary"> Log In </a> &nbsp;
-              <a href="../" class="btn btn-success"> Pareto Docs </a>
+              <a href="../../" class="btn btn-success"> Pareto Docs </a>
             </p>
           </div>
         </div>
       </div>
       <footer class="footer">
         <div class="pull-right">
-          <img src="../images/pareto-logo-footer.png" class="img-responsive">
+          <img src="../../images/pareto-logo-footer.png" class="img-responsive">
         </div>
         &nbsp;
         <a href="https://www.reelyactive.com"
