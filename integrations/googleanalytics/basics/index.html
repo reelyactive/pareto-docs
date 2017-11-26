@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> Google Analytics Basics | Pareto Docs </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Documentation of the basic concepts of the Google Analytics integration with the Pareto platform by reelyActive.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style/pareto-docs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="../../../js/pareto-docs.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-49659454-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body ng-app="pareto-docs">
+    <div ng-controller="InteractionCtrl">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"
+                  ng-init="navCollapsed = true"
+                  ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand-img" href="https://www.reelyactive.com">
+            <img src="../../../images/barnowl-logo-header.png"
+                 class="img-responsive">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"
+             ng-click="navCollapsed = true">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../../../"> Pareto Docs </a></li>
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+              <a href class="dropdown-toggle" uib-dropdown-toggle role="button"
+                 data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                Quick links <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                <li role="menuitem">
+                  <a href="https://pareto.reelyactive.com" target="_blank">
+                    Pareto by reelyActive
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem">
+                  <a href="https://www.reelyactive.com" target="_blank">
+                    reelyActive website
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <img src="../../../images/integrations-googleanalytics-basics-title.png"
+                 class="img-responsive center-block">
+            <h1>
+              Google Analytics Basics <br>
+              <small> Interpretation of the Pareto data in Google Analytics </small> 
+            </h1>
+            <p> The Google Analytics integration with Pareto models <i>"how are people browsing my webpage"</i> as <i>"how are people browsing my physical space?"</i> &nbsp; This tutorial answers the question <b><i>how can the data be interpreted at the most basic level?</i></b> </p>
+
+            <!-- Home Screen -->
+            <h2>
+              Home Screen <br>
+              <small> An overview of the myriad reporting features of Google Analytics </small> 
+            </h2>
+            <p> The Home screen of Google Analytics provides an overview of the many reporting features that are available within the tool.  These reporting features, specifically their relevance to <i>physical browsing behaviour</i>, are each presented below. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <img src="../../../images/integrations-googleanalytics-basics-audience-overview.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Audience Overview </span>
+                <p> The Audience Overview best serves to observe the number of device visits <i>(Users/Sessions)</i> over a given timeframe (ex: 7 days) and to compare this with the previous period. </p>
+                <p> The <i>Session Duration</i> value should be ignored as it is dependent on the behaviour of each class of device, as presented in the New vs. Returning report. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../../images/integrations-googleanalytics-basics-visit-times.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> Visit Times </span>
+                <p> The Visits by Time of Day graphic provides an elegant visualisation of foot traffic by day of the week and by time of day, with a granularity of one hour. </p>
+                <p> The number of <i>Users</i> should not be interpreted as an accurate count of the number of people.  However, in typical situations where the ratio of detectable devices to people is consistent over time, this report can be used to reliably <b>identify trends in foot traffic</b>. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <img src="../../../images/integrations-googleanalytics-basics-realtime.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <span class="lead"> Real-Time </span>
+                <p> The Real-Time report provides confirmation that the integration is active.  Again, the number of <i>Active Users</i> should not be interpreted as an accurate count of the number of people present. </p>
+                <p> The list of <i>Top Active Pages,</i> each representing a directory, can however be used to <b>estimate the current distribution of occupants</b>. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <img src="../../../images/integrations-googleanalytics-basics-acquisition-location.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Acquisition & Location </span>
+                <p> The Acquisition Report is not relevant as the <i>Traffic Channel, Source/Medium</i> and <i> Referrals</i> are not employed as variables. </p>
+                <p> The Location Overview is not relevant as the geographical location is based on Pareto's IP addresses rather than the physical location of the installation. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <img src="../../../images/integrations-googleanalytics-basics-pages.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Pages Report </span>
+                <p> The Pages Report provides an overview of the zones with the highest occupation over a given period of time (ex: 7 days).  A <i>Pageview</i> is the equivalent of a detectable device moving to the associated directory, and occurs again periodically as long as the device remains present.  It can therefore be used to <b>estimate relative occupancy by zone</b>. </p>
+                <p> If a <i>Page Value</i> is assigned in Google Analytics based on an economic indicator associated with the physical zone, for instance in a retail context, this report affords an additional dimension of relevance. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <img src="../../../images/integrations-googleanalytics-basics-active-users.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Active Users </span>
+                <p> The Active Users Report provides an indication of the number of people returning on a daily, weekly and monthly basis.  Given that BLE devices carried by people will typically cycle their identifier many times in a day, this report should be expected to significantly underestimate the number of returning <i>Users</i>. </p>
+              </div>
+            </div>
+            <br>
+            <!-- Behaviour Reports -->
+            <h2>
+              Behaviour Reports <br>
+              <small> Overview </small> 
+            </h2>
+            <p> The Behaviour Reports of Google Analytics provide insight into <i>User</i> behaviour.  The reporting feature most relevant to <i>physical browsing behaviour</i> is presented below. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <img src="../../../images/integrations-googleanalytics-basics-behaviour-flow.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Behaviour Flow </span>
+                <p> The Behaviour Flow report provides an indication of the most common journeys through a physical space.  By default, the report is organised by <i>Landing Page</i>, which is the directory at which a device is first detected by Pareto. </p>
+              </div>
+            </div>
+            <br>
+            <!-- Audience Reports -->
+            <h2>
+              Audience Reports <br>
+              <small> Overview </small> 
+            </h2>
+            <p> The Audience Reports of Google Analytics provide insight into the visitors themselves.  In the case of <i>physical browsing behaviour</i>, the audience is best segmented by device, which Pareto adds as a <i>Custom Dimension</i> as presented below. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <img src="../../../images/integrations-googleanalytics-basics-new-vs-returning.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> New vs. Returning </span>
+                <p> The New vs. Returning report, found under <i>Audience - Behaviour</i>, unlocks powerful insights when sorted on the <i>Secondary Dimension</i> of <b>Device Segmentation</b> (selected as a <i>Custom Dimension</i>).  The result is a table similar to that presented here. </p>
+                <p> A <i>Returning Visitor</i> indicates that the class of device either uses a non-cyclic identifier, or the cycle period is longer than that of a session.  Such classes of devices can be expected to provide a more reliable estimation of <i>Average Session Duration</i>.  In other words, they can be used to <b>estimate average visit duration</b>. </p>
+                <p> A <i>New Visitor</i> suggests that the class of device uses a cyclic identifier.  The <i>Average Session Duration</i> for a given class of device would be expected to be no greater than its cycle period. </p>
+              </div>
+            </div>
+
+            <!-- Pareto CTA -->
+            <br><br><hr>
+            <img src="../../../images/pareto-by-reelyactive.jpg"
+                 class="img-responsive center-block"> <br>
+            <p class="text-center">
+              <a href="https://getpareto.com" target="_blank"
+                 class="btn btn-default"> Get Pareto </a> &nbsp;
+              <a href="https://pareto.reelyactive.com" target="_blank"
+                 class="btn btn-primary"> Log In </a> &nbsp;
+              <a href="../../" class="btn btn-success"> Pareto Docs </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="pull-right">
+          <img src="../../../images/pareto-logo-footer.png" class="img-responsive">
+        </div>
+        &nbsp;
+        <a href="https://www.reelyactive.com"
+           uib-tooltip="We believe in an open Internet of Things"
+           tooltip-placement="right">
+          &copy; reelyActive 2017
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
