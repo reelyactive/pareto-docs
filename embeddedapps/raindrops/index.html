@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> Raindrops | Pareto Docs </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Documentation of the Raindrops embedded app of the Pareto platform by reelyActive.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/pareto-docs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="../../js/pareto-docs.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-49659454-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body ng-app="pareto-docs">
+    <div ng-controller="InteractionCtrl">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"
+                  ng-init="navCollapsed = true"
+                  ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand-img" href="https://www.reelyactive.com">
+            <img src="../../images/barnowl-logo-header.png"
+                 class="img-responsive">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"
+             ng-click="navCollapsed = true">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../../"> Pareto Docs </a></li>
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+              <a href class="dropdown-toggle" uib-dropdown-toggle role="button"
+                 data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                Quick links <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                <li role="menuitem">
+                  <a href="https://pareto.reelyactive.com" target="_blank">
+                    Pareto by reelyActive
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem">
+                  <a href="https://www.reelyactive.com" target="_blank">
+                    reelyActive website
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <img src="../../images/embeddedapps-raindrops-title.jpg"
+                 class="img-responsive center-block">
+            <h1>
+              Raindrops <br>
+              <small> A Pareto Embedded App </small> 
+            </h1>
+            <p> The <i>Raindrops</i> embedded app provides a visualisation of real-time location events on a map.  <i>Raindrops</i> answers the question: <b><i>what is the real-time activity as an events heatmap?</i></b> </p>
+            <br>
+            <div class="row well">
+              <div class="col-sm-12 col-md-3">
+                <span class="lead"> PREREQUISITES: </span>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <ol>
+                  <li> each sensor should be associated with a <i>Position</i>
+                  <li> each device to be explicitly tracked should be associated with a track <i>Tag</i>
+                </ol>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <span class="lead"> Controls </span>
+                <p> The <b>controls</b> permit filtering events by <i>directory</i> and by <i>People</i>.  Ingestion of events can be <i>Paused</i>. </p>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <img src="../../images/embeddedapps-raindrops-controls.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <img src="../../images/embeddedapps-raindrops-legend.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Legend </span>
+                <p> An event associated with a device with a <i>track</i> tag is indicated in <b>orange</b>, likely to be carried by a <i>person</i> in <b>blue</b>, otherwise in <b>grey</b>. </p>
+                <p> A <b>solid</b> raindrop indicates a <i>displacement</i> event.  A <b>dotted</b> raindrop indicates an <i>appearance</i> or <i>keep-alive</i> event. </p>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> POI Associations </span>
+                <p> The associations for each sensor can be edited in the <i>POI View:</i> </p>
+                <p class="text-center">
+                  <a href="../../poi/#edit" target="_blank"
+                     class="btn btn-sm btn-primary"> Read documentation </a>
+                </p>
+                <p> The table provides an example of the <i>Position</i> association and a link to further documentation. </p>
+                <p> The <i>Raindrops</i> embedded app will only display raindrop animations for sensors with an associated <i>Position</i>. </p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <table class="table table-bordered table-striped">
+                  <tbody>
+                    <tr>
+                      <td> Position (X | Y | Z) </td>
+                      <th> 0.09163 | 52.2107 | 0 </th>
+                      <td>
+                        <a href="../../associations/#position"
+                           class="btn btn-xs btn-default"> Read documentation </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <br><hr><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> PAT Associations </span>
+                <p> The associations for each person and thing can be edited in the <i>PAT View:</i> </p>
+                <p class="text-center">
+                  <a href="../../pat/#edit" target="_blank"
+                     class="btn btn-sm btn-primary"> Read documentation </a>
+                </p>
+                <p> The table provides an example of the <i>Tags</i> association and a link to further documentation. </p>
+                <p> The <i>Raindrops</i> embedded app will observe the <b>track</b> tag and represent real-time location events associated with the device in <i>orange</i>. </p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <table class="table table-bordered table-striped">
+                  <tbody>
+                    <tr>
+                      <td> Tags </td>
+                      <th> track </th>
+                      <td>
+                        <a href=../associations/#tags""
+                           class="btn btn-xs btn-default"> Read documentation </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <br><hr><br>
+            <h2>
+              Pareto Embedded Apps <br>
+              <small> Many more to explore </small>
+            </h2>
+            <!-- Embedded Apps Home -->
+            <div class="row well">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <a href="../">
+                  <img src="../../images/embeddedapps-title-icon.png"
+                       class="img-responsive center-block">
+                </a>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9">
+                <p>
+                  <span class="lead"> Embedded Apps: </span>
+                  Discover web applications built directly on Pareto's real-time event data stream.
+                </p>
+                <a href="../"
+                   class="hidden-xs btn btn-sm btn-primary">
+                  Read documentation
+                </a>
+              </div>
+            </div>
+            <!-- Pareto CTA -->
+            <br><br><hr>
+            <img src="../../images/pareto-by-reelyactive.jpg"
+                 class="img-responsive center-block"> <br>
+            <p class="text-center">
+              <a href="https://getpareto.com" target="_blank"
+                 class="btn btn-default"> Get Pareto </a> &nbsp;
+              <a href="https://pareto.reelyactive.com" target="_blank"
+                 class="btn btn-primary"> Log In </a> &nbsp;
+              <a href="../../" class="btn btn-success"> Pareto Docs </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="pull-right">
+          <img src="../../images/pareto-logo-footer.png" class="img-responsive">
+        </div>
+        &nbsp;
+        <a href="https://www.reelyactive.com"
+           uib-tooltip="We believe in an open Internet of Things"
+           tooltip-placement="right">
+          &copy; reelyActive 2017
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
