@@ -132,6 +132,51 @@
               <li> chairs (throughout the building)
               <li> conference rooms with a projector that can fit 7 occupants and have only blue wheeled chairs
             </ul>
+            <p> The following tags are reserved.  These tags are used by the <i>Embedded Apps</i> and their observation is suggested as a best practice, when applicable. </p>
+            <div class="row">
+              <div class="col-sm-6">
+                <table class="table">
+                  <caption> RESERVED POI TAGS </caption>
+                  <thead>
+                    <th> Tag </th>
+                    <th> Interpretation </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> <tt>minRSSI=</tt> </td>
+                      <td> Ignore decodings below the given RSSI <i>(ex: minRSSI=150)</i> </td>
+                    </tr>
+                    <tr>
+                      <td> <tt>maxRSSI=</tt> </td>
+                      <td> Ignore decodings above the given RSSI <i>(ex: maxRSSI=180)</i> </td>
+                    </tr>
+                    <tr>
+                      <td> <tt>capacity=</tt> </td>
+                      <td> The number of people and explicitly-tracked devices this POI can support <i>(ex: capacity=12)</i> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <table class="table">
+                  <caption> RESERVED PAT TAGS </caption>
+                  <thead>
+                    <th> Tag </th>
+                    <th> Interpretation </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> <tt>track</tt> </td>
+                      <td> Explicitly track this device </td>
+                    </tr>
+                    <tr>
+                      <td> <tt>person</tt> </td>
+                      <td> The given device represents a person </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <p> The association of tags with devices is <b>managed in the <i>Points of Interest View</i> </b> and the <b> <i>People and Things View</i>.</b>  Several <i>Embedded Apps</i> use tags.  The <i>Contextual API</i> accepts queries by tags. </p>
             <p class="text-center">
               <a href="../poi"
