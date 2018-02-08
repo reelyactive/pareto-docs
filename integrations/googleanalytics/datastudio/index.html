@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> Data Studio with Google Analytics | Pareto Docs </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Documentation of Google Data Studio visualisations of Google Analytics data from the integration with the Pareto platform by reelyActive.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style/pareto-docs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="../../../js/pareto-docs.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-49659454-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body ng-app="pareto-docs">
+    <div ng-controller="InteractionCtrl">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"
+                  ng-init="navCollapsed = true"
+                  ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand-img" href="https://www.reelyactive.com">
+            <img src="../../../images/barnowl-logo-header.png"
+                 class="img-responsive">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"
+             ng-click="navCollapsed = true">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../../../"> Pareto Docs </a></li>
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+              <a href class="dropdown-toggle" uib-dropdown-toggle role="button"
+                 data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                Quick links <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                <li role="menuitem">
+                  <a href="https://pareto.reelyactive.com" target="_blank">
+                    Pareto by reelyActive
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem">
+                  <a href="https://www.reelyactive.com" target="_blank">
+                    reelyActive website
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <img src="../../../images/integrations-googleanalytics-datastudio-title.png"
+                 class="img-responsive center-block">
+            <h1>
+              Data Studio with Google Analytics <br>
+              <small> Visualisation of the Google Analytics data from Pareto in Google Data Studio </small> 
+            </h1>
+            <p> Google Data Studio is a powerful tool for creating visual reports from a variety of data sources.  In this tutorial, a Google Analytics account integrated with Pareto will be used as the data source.  Browse to <a href="https://datastudio.google.com" target="_blank"> datastudio.google.com </a> to get started. </p>
+
+            <!-- Add Data Source -->
+            <h2>
+              Add Google Analytics Data Source <br>
+              <small> Add the Google Analytics property as a data source </small> 
+            </h2>
+            <p> The Home screen of Google Data Studio provides a list of Reports and Data Sources.  The Google Analytics property must first be added as a Data Source before it can be included in a report. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <img src="../../../images/integrations-googleanalytics-datastudio-data-sources-view.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Add New Data Source </span>
+                <p> Select the Data Sources View by clicking on <b>Data Sources</b> from the left menu. </p>
+                <p> Add a new Data Source by clicking on the <b>+</b> button at the bottom-right of the screen. </p>
+                <img src="../../../images/integrations-googleanalytics-datastudio-add.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><br>
+            <span class="lead"> Select Connector </span>
+            <p> From the list of Connectors at left, select <b>Google Analytics</b> then select the corresponding Account and Property and the <b>All Web Site Data</b> View. </p>
+            <img src="../../../images/integrations-googleanalytics-datastudio-data-source-connectors.png"
+                 class="img-responsive center-block">
+            <br>
+            <div class="row">
+              <div class="col-xs-8 col-md-9">
+                <p class="text-right"> Click on the <b>Connect</b> button at the top-right of the screen. </p> 
+              </div>
+              <div class="col-xs-4 col-md-3">
+                <img src="../../../images/integrations-googleanalytics-datastudio-data-source-connect.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-sm-6 col-md-4">
+                <img src="../../../images/integrations-googleanalytics-datastudio-data-source-rename.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-6 col-md-8">
+                <span class="lead"> Rename Data Source </span>
+                <p> The Data Source now connected, it can be renamed to represent the corresponding physical space, for instance.  Click on the title at top left and edit to rename.  The Google Analytics Data Source is now ready. </p>
+              </div>
+            </div>
+            <br><hr><br>
+
+            <!-- Create Report -->
+            <h2>
+              Create Report from Data Source <br>
+              <small> Create a new Report from the Google Analytics data </small> 
+            </h2>
+            <p> From the Data Studio home screen <i>(which can always be reached by clicking the logo icon at top-left)</i>, it is now possible to create a Report. </p>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <img src="../../../images/integrations-googleanalytics-datastudio-reports-view.png"
+                     class="img-responsive center-block">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <span class="lead"> Create New Report </span>
+                <p> Select the Reports View by clicking on <b>Reports</b> from the left menu. </p>
+                <p> Create a new Report by clicking on the <b>+</b> button at the bottom-right of the screen. </p>
+                <img src="../../../images/integrations-googleanalytics-datastudio-add.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-sm-6 col-md-8">
+                <span class="lead"> Add Data Source </span>
+                <p> A blank Report should be visible with an option to select a Data Source at right.  Select the Google Analytics Data Source by its name. </p>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <img src="../../../images/integrations-googleanalytics-datastudio-report-add-data-source.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <p> When prompted, confirm the addition of the Data Source to the Report by clicking <b>ADD TO REPORT</b>. </p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <img src="../../../images/integrations-googleanalytics-datastudio-report-add-to-report.png"
+                     class="img-responsive center-block">
+              </div>
+            </div>
+            <br><br>
+            <span class="lead"> Blank Report </span>
+            <p> A blank Report with access to the Google Analytics data is now ready.  The Report can be renamed to represent the corresponding physical space, for instance. </p>
+            <img src="../../../images/integrations-googleanalytics-datastudio-report-blank.png"
+                 class="img-responsive center-block">
+            <br>
+            <p> A report customised to the physical space and the behaviour of interest may now be created. </p>
+
+            <!-- Pareto CTA -->
+            <br><br><hr>
+            <img src="../../../images/pareto-by-reelyactive.jpg"
+                 class="img-responsive center-block"> <br>
+            <p class="text-center">
+              <a href="https://getpareto.com" target="_blank"
+                 class="btn btn-default"> Get Pareto </a> &nbsp;
+              <a href="https://pareto.reelyactive.com" target="_blank"
+                 class="btn btn-primary"> Log In </a> &nbsp;
+              <a href="../../" class="btn btn-success"> Pareto Docs </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="pull-right">
+          <img src="../../../images/pareto-logo-footer.png" class="img-responsive">
+        </div>
+        &nbsp;
+        <a href="https://www.reelyactive.com"
+           uib-tooltip="We believe in an open Internet of Things"
+           tooltip-placement="right">
+          &copy; reelyActive 2018
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
